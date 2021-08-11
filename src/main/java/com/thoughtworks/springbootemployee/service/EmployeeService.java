@@ -18,7 +18,10 @@ public class EmployeeService {
         return employeeRepository.getEmployees();
     }
 
-    public Employee findEmployeeById(Integer id) {
-        return  null;
+    public Employee findEmployeeById(Integer employeeId) {
+        return employeeRepository.getEmployees().stream()
+                .filter(employee -> employee.getId().equals(employeeId))
+                .findFirst()
+                .orElse(null);
     }
 }
