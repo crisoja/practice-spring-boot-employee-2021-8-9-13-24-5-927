@@ -66,4 +66,24 @@ class EmployeeServiceTest {
         //then
         assertEquals( employees.get(4), correctEmployee);
     }
+
+    @Test
+    void should_return_employees_with_male_gender_when_findEmployeeByGender_given_employees_and_employee_gender_male(){
+        // Given
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee(1, "russel", 22, "male", 1000));
+        employees.add(new Employee(2, "janley", 18, "male", 50000));
+        employees.add(new Employee(4, "edgar", 20, "male", 20));
+        employees.add(new Employee(5, "montemayor", 22, "male", 300));
+        given(employeeRepository.getEmployees()).willReturn(employees);
+
+        //when
+        List<Employee> maleEmployees = employeeService.findEmployeeByGender("male");
+
+        //then
+        assertEquals(employees, maleEmployees);
+    }
+
+
+
 }

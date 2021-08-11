@@ -24,4 +24,8 @@ public class EmployeeService {
                 .findFirst()
                 .orElse(null);
     }
+
+    public List<Employee> findEmployeeByGender(String gender) {
+        return null;
+    }
 }
