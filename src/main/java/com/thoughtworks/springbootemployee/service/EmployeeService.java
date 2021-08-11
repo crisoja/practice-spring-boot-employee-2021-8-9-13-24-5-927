@@ -31,4 +31,8 @@ public class EmployeeService {
                 .filter(employee -> employee.getGender().equals(gender))
                 .collect(Collectors.toList());
     }
+
+    public List<Employee> getEmployeesByPagination(Integer pageIndex, Integer pageSize) {
+        return null;
+    }
 }
