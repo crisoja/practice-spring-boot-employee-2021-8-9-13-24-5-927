@@ -100,6 +100,22 @@ class EmployeeServiceTest {
         assertIterableEquals(employees, pageinationEmployees);
     }
 
+    @Test
+    void should_add_employee_when_addEmployee_given_an_employee(){
+        // Given
+        Employee  newEmployee = new Employee(7, "marian", 24, "female", 2400);
+        //when
+
+        employeeRepository.addEmployee(newEmployee);
+
+
+        //then
+        assertEquals(newEmployee, employeeService.findEmployeeById(newEmployee.getId() + 1));
+
+    }
+
+
+
 
 
 
