@@ -29,4 +29,9 @@ public class EmployeesController {
         return employeeService.findEmployeeById(employeeId);
     }
 
+    @GetMapping(params = "gender")
+    public List<Employee> findEmployeeByGender(@RequestParam String gender){
+        return employeeService.findEmployeeByGender(gender);
+    }
+
 }
