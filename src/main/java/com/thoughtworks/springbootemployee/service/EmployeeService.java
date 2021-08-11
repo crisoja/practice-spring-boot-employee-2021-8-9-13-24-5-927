@@ -5,7 +5,6 @@ import com.thoughtworks.springbootemployee.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class EmployeeService {
@@ -16,6 +15,10 @@ public class EmployeeService {
     }
 
     public List<Employee> getEmployees() {
-        return null;
+        return employeeRepository.getEmployees();
+    }
+
+    public Employee findEmployeeById(Integer id) {
+        return  null;
     }
 }
